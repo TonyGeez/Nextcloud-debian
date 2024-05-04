@@ -1,25 +1,51 @@
 # Nextcloud Automatic Installer
 
-This repository contains a Bash script for automating the installation of Nextcloud on a Debian 12 server. It sets up all necessary dependencies including Apache, PHP, MySQL, and configures them along with Nextcloud without manual intervention.
+This repository contains scripts for automating the installation and uninstallation of Nextcloud on a FRESH Debian 12 server with sudo right using an environment file for configuration settings. This setup makes it easy to customize, deploy, and remove Nextcloud without manual intervention.
 
-## Overview
+## Repository Structure
 
-Nextcloud offers industry-leading on-premises file sync and online collaboration technology. Our goal is to provide secure and compliant file syncing and sharing features on a robust and scalable server setup.
-
-## Features
-
-- Automatic installation of Apache, PHP, and MySQL.
-- Configures PHP and Apache to suit Nextcloud.
-- Sets up a MySQL database and user specifically for Nextcloud.
-- Downloads and configures the latest version of Nextcloud.
+- `install.sh`: Script to install Nextcloud.
+- `uninstall.sh`: Script to uninstall Nextcloud.
+- `config.env`: Environment configuration file.
+- `README.md`: Documentation for the repository.
 
 ## Installation
+```bash
+curl https://github.com/TonyGeez/Nextcloud-debian/
+# Or
+wget https://github.com/TonyGeez/Nextcloud-debian/
+```
 
-To use this script:
+Before running the installation script, configure the settings in `config.env` file. Here is what it typically looks like:
 
-1. Ensure you have a fresh Debian 12 server ready.
-2. SSH into your server as a user with sudo privileges.
-3. Download the script from this repository.
-4. Make the script executable:
-   ```bash
-   chmod +x install_nextcloud.sh
+```env
+NEXTCLOUD_DIR=/var/www/nextcloud
+DB_NAME=nextcloud_db
+DB_USER=nextcloud_user
+DB_PASS=nextcloud_password
+DOMAIN_OR_IP=example.com
+```
+After that, start the installation process:
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+Nextcloud will be installed at the configured domain or IP, and you can access it through your web browser.
+
+
+## Uninstallation
+Make sure to backup your machine before executing running uninstall.sh
+
+To remove Nextcloud from your server:
+
+```bash
+chmod +x uninstall.sh
+./uninstall.sh
+```
+
+This will remove all components related to Nextcloud installed by the install.sh script.
+
+## Security
+Please ensure your config.env file is not publicly accessible and consider using secure methods for managing passwords and sensitive information. Additionally, consider setting up HTTPS to secure the connection to your Nextcloud instance.
+
