@@ -1,0 +1,7 @@
+{
+  "NEXTCLOUD_DIR": "/var/www/nextcloud",
+  "DB_NAME": "nextcloud_db",
+  "DB_USER": "nextcloud_user",
+  "DB_PASS": "nextcloud_password",
+  "DOMAIN_OR_IP": "example.com"
+}
