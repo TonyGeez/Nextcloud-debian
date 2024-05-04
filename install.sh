@@ -65,4 +65,3 @@ sudo systemctl restart apache2
 
 echo "Nextcloud installation completed successfully!"
 echo "You can access Nextcloud at: http://${DOMAIN_OR_IP}/"
-
