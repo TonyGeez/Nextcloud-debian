@@ -8,14 +8,7 @@ This repository contains scripts for automating the installation and uninstallat
 - `uninstall.sh`: Script to uninstall Nextcloud.
 - `config.env`: Environment configuration file.
 - `README.md`: Documentation for the repository.
-
-## Installation
-```bash
-curl https://github.com/TonyGeez/Nextcloud-debian/
-# Or
-wget https://github.com/TonyGeez/Nextcloud-debian/
-```
-
+- 
 Before running the installation script, configure the settings in `config.env` file. Here is what it typically looks like:
 
 ```env
@@ -25,8 +18,14 @@ DB_USER=nextcloud_user
 DB_PASS=nextcloud_password
 DOMAIN_OR_IP=example.com
 ```
-After that, start the installation process:
+
+## Installation
 ```bash
+git clone https://github.com/TonyGeez/Nextcloud-debian/
+cd Nextcloud-debian
+vim config.env
+# Or
+nano config.env
 chmod +x install.sh
 ./install.sh
 ```
