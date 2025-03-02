@@ -2,14 +2,7 @@
 
 This repository contains scripts for automating the installation and uninstallation of Nextcloud on a FRESH Debian 12 server with sudo right using an environment file for configuration settings. This setup makes it easy to customize, deploy, and remove Nextcloud without manual intervention.
 
-## Repository Structure
-
-- `install.sh`: Script to install Nextcloud.
-- `uninstall.sh`: Script to uninstall Nextcloud.
-- `config.env`: Environment configuration file.
-- `README.md`: Documentation for the repository.
-- 
-Before running the installation script, configure the settings in `config.env` file. Here is what it typically looks like:
+Before running the installation script, configure the settings in `config.env` file. 
 
 ```env
 NEXTCLOUD_DIR=/var/www/nextcloud
@@ -31,7 +24,6 @@ chmod +x install.sh
 ```
 
 Nextcloud will be installed at the configured domain or IP, and you can access it through your web browser.
-
 
 ## Uninstallation
 Make sure to backup your machine before executing running uninstall.sh
